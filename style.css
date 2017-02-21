@@ -16,70 +16,64 @@ body, html {
   padding: 0;
 }
 
-.parallax {
+.space {
   height: 100vh;
   perspective: 300px;
   overflow-y: auto;
   overflow-x: hidden;
 }
 
-.parallax__group {
-  // background-color: teal;
+.space-group {
   height: 100vh;
   transform-style: preserve-3d;
   position: relative;
 }
 
-.parallax__layer {
-  // background-color: purple;
+.space-layer {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
+  display: flex;
 }
 
-.parallax__layer--fore {
-  // background-color: red;
+.space-layer-fore {
   z-index: 1;
   transform: translateZ(90px) scale(0.7);
 }
 
-.parallax__layer--base {
+.space-layer-base {
   z-index: 4;
   transform: translateZ(0);
-  // background-color: bisque;
 }
 
-.parallax__layer--back {
+.space-layer-back {
   transform: translateZ(-300px) scale(2.011);
   z-index: 3;
 }
 
-.parallax__layer--deep {
-  transform: translateZ(-600px) scale(3);
-  // background-color: gray;
+.space-layer-deep {
+  /*border: 1px solid red;*/
+  transform: translateZ(-600px) scale(2);
   z-index: 2;
 }
 
 
-.parallax {
+.space {
   font-size: 200%;
 }
 
 .title {
   text-align: center;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  margin: auto;
 }
 
 #group1 {
   z-index: 5;
 }
 
-#group1 .parallax__layer--base {
+#group1 .space-layer-base {
   background: url('x.png');
   background-size: cover;
 }
@@ -88,7 +82,7 @@ body, html {
   z-index: 3;
 }
 
-#group2 .parallax__layer--back {
+#group2 .space-layer-back {
   background: url('z.png');
   background-size: cover;
 }
@@ -97,43 +91,41 @@ body, html {
   z-index: 4;
 }
 
-#group3 .parallax__layer--base {
-  background: url('y.png');
-  background-size: cover;
+#group3 .space-layer-base {
+  background:#0C0F05;
 }
 
 #group4 {
   z-index: 2;
 }
 
-#group4 .parallax__layer--deep {
-  background:url('w.png');
-  background-size: contain;
+#group4 .space-layer-deep {
+  background:#BEE9CD;
 }
 
-#group5 {
+/*#group5 {
   z-index: 3;
 }
 
-#group5 .parallax__layer--base {
+#group5 .space-layer-base {
   background: #5BB8C8;
   background-size: cover;
-}
+}*/
 
-#group6 {
+/*#group6 {
   z-index: 2;
 }
 
-#group6 .parallax__layer--back {
+#group6 .space-layer-back {
     background: url('y.png');
   background-size: contain;
-}
+}*/
 
 #group7 {
   z-index: 3;
 }
 
-#group7 .parallax__layer--base {
+#group7 .space-layer-base {
   background: url('b.jpeg');
   background-size: cover;
 }
@@ -154,31 +146,38 @@ nav {
   height: 50px;
 }
 
-.base {
+.group-one-base {
     /*border: 1px solid red;*/
     height: 200px;
     width: 300px;
     background-color: #1B3550;
     color: #ffffff;
     font-family: Arial;
+    
 }
 
-.back {
+.group-two-back {
     /*border: 1px solid red;*/
     position: absolute;
-    left: 80%;
-    width: 300px;
-    height: 300px;
-    border-radius: 5px;
-    background-color: #491826;
-    color: #ffffff;
-    /*vertical-align: middle;*/
+    left: 10%;
+    top: 30%;
+
 }
-.group2base {
-    width: 200px;
-    height: 200px;
+
+.group-three-base {
+    background-color: darkorange;
     border-radius: 50%;
-    background-color: #1E4517;
+    width: 500px;
+    height: 500px;
+
+}
+
+#cloud {
+  /*border: 1px solid red;*/
+  position: absolute;
+  left: 20%;
+  top: 35%;
+  opacity: .9;
 }
 
 .fore {
@@ -191,10 +190,19 @@ nav {
     border-radius: 40%;
 }
 
+#ballon {
+  position: absolute;
+  left: 30%;
+}
 
-.pngimage {
-    position: absolute;
-    top: 50%;
-    left: 80%;
-    text-align: right;
+#ballon3 {
+  position: absolute;
+  top: 20%;
+  right: 30%;
+}
+
+#ballon4 {
+  position: absolute;
+  top: 20%;
+  right: 20%;
 }
